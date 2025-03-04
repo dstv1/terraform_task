@@ -1,4 +1,4 @@
-tfe_token = "e1Ufy65ByI1jOg.atlasv1.K4azMtrca8X29ECu54d2yzRCzsavIL0HxO23eX0S05sisflOzJuvwsz74rkb3ei43Zc"
+tfe_token = "Ju6yCJ42FD4ocA.atlasv1.hiMREyle7CIGTTWzUb9cLgbnqLUfHcTy6GJa9FVLXTDHvgP9B9iue8iF02q6IBvpri0"
 gh_token = "ot-oyXSrEvWv5dYiwsA" 
 var-test1 = "testing-testing"
 
