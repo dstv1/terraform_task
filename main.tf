@@ -1,5 +1,5 @@
 provider "tfe" {
-  token    = var.tfe_token
+  token    = var.terraform_api_token
  organization = "my-test-hcporg"
 }
 

@@ -1,4 +1,4 @@
-variable "tfe_token" {
+variable "terraform_api_token" {
   description = "The token used to authenticate with Terraform Cloud/Enterprise"
   type        = string
   sensitive   = true
