@@ -1,3 +1,9 @@
+variable "organization" {
+  description = "my-test-hcporg"
+  type        = string
+  sensitive   = true
+}
+
 variable "mytf_api_token" {
   description = "The token used to authenticate with Terraform Cloud/Enterprise"
   type        = string
