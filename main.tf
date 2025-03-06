@@ -7,8 +7,8 @@ resource "tfe_project" "project-1" {
   name = "project-1"
 }
 
-resource "tfe_workspace" "vcs" {
-  name                 = "vcs"
+resource "tfe_workspace" "VCS" {
+  name                 = "VCS"
   queue_all_runs       = false
   project_id    = tfe_project.project-1.id
     vcs_repo {
