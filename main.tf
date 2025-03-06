@@ -1,6 +1,6 @@
 provider "tfe" {
   token    = var.mytf_api_token
- organization = "my-test-hcporg"
+  organization = var.organization
 }
 
 resource "tfe_project" "project-1" {
