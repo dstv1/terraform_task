@@ -4,17 +4,18 @@ variable "mytf_api_token" {
   sensitive   = true
 }
 
-
 variable "gh_token" {
   description = "The token used to authenticate with Github"
   type        = string
   sensitive   = true
 }
 
-
-variable "var-test1" {
-  description  = "var set for CLI workspaces"
+variable "var-ENV" {
+  description  = "ENV Hi all CLI workspaces"
   type        = string
 }
 
-
+variable "var-TF" {
+  description  = "TF Hi all CLI workspaces"
+  type        = string
+}
