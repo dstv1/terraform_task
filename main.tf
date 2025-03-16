@@ -7,7 +7,7 @@ resource "tfe_oauth_client" "vcs-provider" {
   name             = "HCP Terraform (my-test-hcporg)"
   organization     = "my-test-hcporg"
   api_url          = "https://api.github.com"
-  http_url         = "https://github.com/dstv1/repository"
+  http_url         = "https://github.com"
   oauth_token      = var.gh_token
   service_provider = "github"
   organization_scoped = true
