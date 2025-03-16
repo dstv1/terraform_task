@@ -42,8 +42,8 @@ resource "tfe_workspace_variable_set" "varset-workspaces-ENV-TF-3" {
 
 
 
-resource "tfe_oauth_client" "vcs-provider" {
-  name             = "VCS"
+resource "tfe_oauth_client" "github-oauth" {
+  name             = "github-oauth"
   organization     = "my-test-hcporg"
   api_url          = "https://api.github.com"
   http_url         = "https://github.com"
@@ -59,7 +59,7 @@ resource "tfe_workspace" "VCS" {
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/repository"
-    oauth_token_id     = tfe_oauth_client.vcs-provider.oauth_token_id
+    oauth_token_id     = tfe_oauth_client.github-oauth.oauth_token_id
   }
 }
 
