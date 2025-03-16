@@ -43,7 +43,7 @@ resource "tfe_workspace_variable_set" "varset-workspaces-ENV-TF-3" {
 
 
 resource "tfe_oauth_client" "vcs-provider" {
-  name             = "HCP Terraform (my-test-hcporg)"
+  name             = "VCS"
   organization     = "my-test-hcporg"
   api_url          = "https://api.github.com"
   http_url         = "https://github.com"
@@ -59,7 +59,7 @@ resource "tfe_workspace" "VCS" {
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/repository"
-    
+    oauth_token_id     = tfe_oauth_client.VCS.oauth_token_id
   }
 }
 
