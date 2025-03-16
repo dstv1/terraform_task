@@ -52,13 +52,13 @@ resource "tfe_oauth_client" "github-oauth" {
   organization_scoped = true
 }
 
-resource "tfe_workspace" "VCS" {
-  name                 = "VCS"
+resource "tfe_workspace" "VCS-Github" {
+  name                 = "VCS-Github"
   queue_all_runs       = false
   project_id    = tfe_project.project-1.id
     vcs_repo {
     branch             = "main"
-    identifier         = "dstv1/repository"
+    identifier         = "dstv1/tf-vcs-repo"
     oauth_token_id     = tfe_oauth_client.github-oauth.oauth_token_id
   }
 }
