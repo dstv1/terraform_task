@@ -3,6 +3,16 @@ provider "tfe" {
   organization = var.organization
 }
 
+resource "tfe_oauth_client" "vcs-provider" {
+  name             = "my-github-oauth-client"
+  organization     = "my-test-hcporg"
+  api_url          = "https://api.github.com"
+  http_url         = "https://github.com"
+  oauth_token      = var.gh_token
+  service_provider = "github"
+  organization_scoped = true
+}
+
 resource "tfe_project" "project-1" {
   name = "project-1"
 }
