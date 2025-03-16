@@ -16,12 +16,6 @@ variable "gh_token" {
   sensitive   = true
 }
 
-variable "tf-gh_token" {
-  description = "The token used to authenticate TF with Github"
-  type        = string
-  sensitive   = true
-}
-
 variable "var-ENV" {
   description  = "ENV Hi all CLI workspaces"
   type        = string
