@@ -59,7 +59,7 @@ resource "tfe_workspace" "VCS" {
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/repository"
-    oauth_token_id     = "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"
+    oauth_token_id     = "ghaot-exrDfERxoSCioc4w"
   }
 }
 
