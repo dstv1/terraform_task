@@ -59,7 +59,7 @@ resource "tfe_workspace" "VCS" {
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/repository"
-    oauth_token_id     = tfe_oauth_client.VCS.oauth_token_id
+    oauth_token_id     = tfe_oauth_client.gh_token.oauth_token_id
   }
 }
 
