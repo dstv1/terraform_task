@@ -16,7 +16,7 @@ sudo dnf install -y terraform && \
 sudo git clone https://xxx/dstv1/TFtask.git $HOME/TFtask && \
 cd $HOME/TFtask && \
 sudo bash -c 'echo "mytf_api_token = \"xxx\"" > terraform.tfvars' && \
-echo 'gh_token = "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"' >> terraform.tfvars && \
+echo 'gh_token = "xxx"' >> terraform.tfvars && \
 echo 'var-ENV = "ENV Hi all CLI workspaces"' >> terraform.tfvars && \
 echo 'var-TF = "TF Hi all CLI workspaces"' >> terraform.tfvars && \
 echo 'organization = "my-test-hcporg"' >> terraform.tfvars && \
