@@ -13,7 +13,7 @@ sudo dnf update -y && \
 sudo dnf install -y yum-utils && \
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
 sudo dnf install -y terraform && \
-sudo git clone https://xxx/dstv1/TFtask.git $HOME/TFtask && \
+sudo git clone https://xxx/dstv1/Terraform.git $HOME/TFtask && \
 cd $HOME/TFtask && \
 sudo bash -c 'echo "mytf_api_token = \"xxx\"" > terraform.tfvars' && \
 echo 'gh_token = "xxx"' >> terraform.tfvars && \
