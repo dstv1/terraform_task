@@ -41,7 +41,6 @@ resource "tfe_workspace_variable_set" "deployment_region_3" {
 }
 
 
-
 resource "tfe_oauth_client" "github-oauth" {
   name             = "github-oauth"
   organization     = "my-test-hcporg"
@@ -51,13 +50,12 @@ resource "tfe_oauth_client" "github-oauth" {
   service_provider = "github"
 }
 
-resource "tfe_workspace" "VCS-Github" {
-  name                 = "VCS-Github"
-  queue_all_runs       = false
+resource "tfe_workspace" "terraform_vcs" {
+  name                 = "terraform_vcs"
   project_id    = tfe_project.project.id
     vcs_repo {
     branch             = "main"
-    identifier         = "dstv1/tf-vcs-repo"
+    identifier         = "dstv1/terraform_vcs"
     oauth_token_id     = tfe_oauth_client.github-oauth.oauth_token_id
   }
 }
