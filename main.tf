@@ -3,8 +3,8 @@ provider "tfe" {
   organization = var.organization
 }
 
-resource "tfe_project" "project_test" {
-  name = "project_test"
+resource "tfe_project" "project" {
+  name = "project"
 }
 
 resource "tfe_variable_set" "deployment_region" {
@@ -55,7 +55,7 @@ resource "tfe_oauth_client" "github-oauth" {
 resource "tfe_workspace" "VCS-Github" {
   name                 = "VCS-Github"
   queue_all_runs       = false
-  project_id    = tfe_project.project-1.id
+  project_id    = tfe_project.project.id
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/tf-vcs-repo"
@@ -65,15 +65,15 @@ resource "tfe_workspace" "VCS-Github" {
 
 resource "tfe_workspace" "stage_AWS_1" {
   name                 = "stage_AWS_1"
-project_id    = tfe_project.project_test.id
+project_id    = tfe_project.project.id
 }
 
 resource "tfe_workspace" "stage_AWS_2" {
   name                 = "stage_AWS_2"
-project_id    = tfe_project.project_test.id
+project_id    = tfe_project.project.id
 }
 
 resource "tfe_workspace" "stage_AWS_3" {
   name                 = "stage_AWS_3"
-project_id    = tfe_project.project_test.id
+project_id    = tfe_project.project.id
 }
