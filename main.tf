@@ -1,5 +1,5 @@
 provider "tfe" {
-  token    = var.mytf_api_token
+  token    = var.terraform_api_token
   organization = var.organization
 }
 
@@ -47,7 +47,7 @@ resource "tfe_oauth_client" "github-oauth" {
   organization     = "my-test-hcporg"
   api_url          = "https://api.github.com"
   http_url         = "https://github.com"
-  oauth_token      = var.gh_token
+  oauth_token      = var.github_api_token
   service_provider = "github"
   organization_scoped = true
 }
