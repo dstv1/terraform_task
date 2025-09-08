@@ -4,13 +4,13 @@ variable "organization" {
   sensitive   = true
 }
 
-variable "mytf_api_token" {
+variable "terraform_api_token" {
   description = "The token used to authenticate with Terraform Cloud/Enterprise"
   type        = string
   sensitive   = true
 }
 
-variable "gh_token" {
+variable "github_api_token" {
   description = "The token used to authenticate with Github"
   type        = string
   sensitive   = true
