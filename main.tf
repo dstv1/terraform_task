@@ -49,7 +49,6 @@ resource "tfe_oauth_client" "github-oauth" {
   http_url         = "https://github.com"
   oauth_token      = var.github_api_token
   service_provider = "github"
-  organization_scoped = true
 }
 
 resource "tfe_workspace" "VCS-Github" {
