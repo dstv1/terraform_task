@@ -53,6 +53,7 @@ resource "tfe_oauth_client" "github-oauth" {
 resource "tfe_workspace" "terraform_vcs" {
   name                 = "terraform_vcs"
   project_id    = tfe_project.project.id
+  queue_all_runs       = false
     vcs_repo {
     branch             = "main"
     identifier         = "dstv1/terraform_vcs"
