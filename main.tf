@@ -7,36 +7,36 @@ resource "tfe_project" "project_test" {
   name = "project_test"
 }
 
-resource "tfe_variable_set" "deployment_region_and_key" {
-  name         = "deployment_region_and_key"
+resource "tfe_variable_set" "deployment_region" {
+  name         = "deployment_region"
 }
 
 resource "tfe_variable" "region" {
   key             = "region"
-  value           = "us-east-1"
+  value           = "usa"
   category        = "terraform"
-  description     = "The AWS region to deploy resources into"
-  variable_set_id = tfe_variable_set.deployment_region_and_key.id
+  description     = "deployment region"
+  variable_set_id = tfe_variable_set.deployment_region.id
 }
 
-resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
-  key             = "AWS_SECRET_ACCESS_KEY"
-  value           = "12345"
+resource "tfe_variable" "AWS_REGION" {
+  key             = "AWS_REGION"
+  value           = "us-east-1"
   category        = "env"
-  description     = "allowing your workspaces to authenticate to AWS"
-  variable_set_id = tfe_variable_set.deployment_region_and_key.id
+  description     = "AWS region"
+  variable_set_id = tfe_variable_set.deployment_region.id
 }
 
-resource "tfe_workspace_variable_set" "deployment_region_and_key_1" {
-  variable_set_id = tfe_variable_set.deployment_region_and_key.id
+resource "tfe_workspace_variable_set" "deployment_region_1" {
+  variable_set_id = tfe_variable_set.deployment_region.id
   workspace_id    = tfe_workspace.stage_AWS_1.id
 }
-resource "tfe_workspace_variable_set" "deployment_region_and_key_2" {
-  variable_set_id = tfe_variable_set.deployment_region_and_key.id
+resource "tfe_workspace_variable_set" "deployment_region_2" {
+  variable_set_id = tfe_variable_set.deployment_region.id
   workspace_id    = tfe_workspace.stage_AWS_2.id
 }
-resource "tfe_workspace_variable_set" "deployment_region_and_key_3" {
-  variable_set_id = tfe_variable_set.deployment_region_and_key.id
+resource "tfe_workspace_variable_set" "deployment_region_3" {
+  variable_set_id = tfe_variable_set.deployment_region.id
   workspace_id    = tfe_workspace.stage_AWS_3.id
 }
 
