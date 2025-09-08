@@ -16,12 +16,12 @@ variable "github_api_token" {
   sensitive   = true
 }
 
-variable "var-ENV" {
-  description  = "ENV Hi all CLI workspaces"
+variable "AWS_SECRET_ACCESS_KEY" {
+  description  = "allowing your workspaces to authenticate to AWS"
   type        = string
 }
 
-variable "var-TF" {
-  description  = "TF Hi all CLI workspaces"
+variable "region" {
+  description  = "The AWS region to deploy resources into"
   type        = string
 }
