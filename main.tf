@@ -23,7 +23,7 @@ resource "tfe_variable" "aws_secret_key" {
   key             = "aws_secret_key"
   value           = var.aws_secret_key
   category        = "env"
-  description     = "Environment variable"
+  description     = "Environment variable for aws secret key"
   variable_set_id = tfe_variable_set.aws_deployment.id
   sensitive       = true
 }
