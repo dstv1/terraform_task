@@ -13,12 +13,7 @@ variable "github_api_token" {
   type        = string
 }
 
-variable "AWS_REGION" {
-  description  = "AWS Environment variable"
-  type        = string
-}
-
-variable "region" {
+variable "aws_region" {
   description = "Terraform variable for deployment region"
   type        = string
 }
