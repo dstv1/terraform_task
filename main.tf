@@ -15,7 +15,7 @@ resource "tfe_variable" "region" {
   key             = "region"
   value           = "usa"
   category        = "terraform"
-  description     = "deployment region"
+  description     = "Terraform variable for deployment region"
   variable_set_id = tfe_variable_set.deployment_region.id
 }
 
@@ -23,7 +23,7 @@ resource "tfe_variable" "AWS_REGION" {
   key             = "AWS_REGION"
   value           = "us-east-1"
   category        = "env"
-  description     = "AWS region"
+  description     = "AWS Environment variable"
   variable_set_id = tfe_variable_set.deployment_region.id
 }
 
