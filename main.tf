@@ -7,36 +7,36 @@ resource "tfe_project" "project" {
   name = "project"
 }
 
-resource "tfe_variable_set" "deployment_region" {
-  name         = "deployment_region"
+resource "tfe_variable_set" "aws_deployment" {
+  name         = "aws_deployment"
 }
 
-resource "tfe_variable" "region" {
-  key             = "region"
-  value           = "usa"
+resource "tfe_variable" "aws_region" {
+  key             = "aws_region"
+  value           = "us-east-1"
   category        = "terraform"
   description     = "Terraform variable for deployment region"
-  variable_set_id = tfe_variable_set.deployment_region.id
+  variable_set_id = tfe_variable_set.aws_deployment.id
 }
 
-resource "tfe_variable" "AWS_REGION" {
-  key             = "AWS_REGION"
-  value           = "us-east-1"
+resource "tfe_variable" "aws_secret_key" {
+  key             = "aws_secret_key"
+  value           = var.aws_secret_key
   category        = "env"
-  description     = "AWS Environment variable"
-  variable_set_id = tfe_variable_set.deployment_region.id
+  description     = "Environment variable"
+  variable_set_id = tfe_variable_set.aws_deployment.id
 }
 
-resource "tfe_workspace_variable_set" "deployment_region_1" {
-  variable_set_id = tfe_variable_set.deployment_region.id
+resource "tfe_workspace_variable_set" "aws_deployment_1" {
+  variable_set_id = tfe_variable_set.aws_deployment.id
   workspace_id    = tfe_workspace.stage_AWS_1.id
 }
-resource "tfe_workspace_variable_set" "deployment_region_2" {
-  variable_set_id = tfe_variable_set.deployment_region.id
+resource "tfe_workspace_variable_set" "aws_deployment_2" {
+  variable_set_id = tfe_variable_set.aws_deployment.id
   workspace_id    = tfe_workspace.stage_AWS_2.id
 }
-resource "tfe_workspace_variable_set" "deployment_region_3" {
-  variable_set_id = tfe_variable_set.deployment_region.id
+resource "tfe_workspace_variable_set" "aws_deployment_3" {
+  variable_set_id = tfe_variable_set.aws_deployment.id
   workspace_id    = tfe_workspace.stage_AWS_3.id
 }
 
