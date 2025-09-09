@@ -25,7 +25,6 @@ resource "tfe_variable" "aws_secret_key" {
   category        = "env"
   description     = "Environment variable for AWS Secret Access Key"
   variable_set_id = tfe_variable_set.aws_deployment.id
-  sensitive       = true
 }
 
 resource "tfe_workspace_variable_set" "aws_deployment_1" {
