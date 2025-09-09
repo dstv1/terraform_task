@@ -21,4 +21,5 @@ variable "aws_region" {
 variable "aws_secret_key" {
   description = "Environment variable for AWS Secret Access Key"
   type        = string
+  sensitive   = true
 }
