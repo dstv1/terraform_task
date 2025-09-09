@@ -17,3 +17,9 @@ variable "aws_region" {
   description = "Terraform variable for deployment region"
   type        = string
 }
+
+variable "aws_secret_key" {
+  description = "AWS Secret Access Key for authentication"
+  type        = string
+  sensitive   = true
+}
