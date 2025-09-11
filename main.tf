@@ -13,7 +13,7 @@ resource "tfe_variable_set" "aws_deployment" {
 
 resource "tfe_variable" "aws_region" {
   key             = "aws_region"
-  value           = "us-east-1"
+  value           = var.aws_region
   category        = "terraform"
   description     = "Terraform variable for deployment region"
   variable_set_id = tfe_variable_set.aws_deployment.id
